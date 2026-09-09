@@ -140,12 +140,12 @@ export function SiteHeader() {
       }`}
     >
       <div
-        className={`mx-auto flex max-w-[1400px] items-center gap-4 px-4 transition-all duration-300 sm:px-6 ${
+        className={`mx-auto flex w-full max-w-[1400px] items-center gap-2 px-4 transition-all duration-300 sm:gap-4 sm:px-6 ${
           scrolled ? "h-14" : "h-16"
         }`}
       >
-        <Link to="/" className="flex shrink-0 items-center gap-2">
-          <span className="grid size-10 shrink-0 place-items-center rounded-2xl bg-foreground p-1.5 transition-colors dark:bg-transparent dark:p-0">
+        <Link to="/" className="flex min-w-0 items-center gap-2">
+          <span className="grid size-9 shrink-0 place-items-center rounded-2xl bg-foreground p-1.5 transition-colors sm:size-10 dark:bg-transparent dark:p-0">
             <img
               src={heroLogo}
               alt="Kapematt logo"
@@ -154,8 +154,8 @@ export function SiteHeader() {
               className="size-full object-contain"
             />
           </span>
-          <span className="leading-none">
-            <span className="font-display text-2xl font-bold tracking-tight">
+          <span className="min-w-0 leading-none">
+            <span className="block truncate font-display text-xl font-bold tracking-tight sm:text-2xl">
               kapematt
             </span>
             <span className="block font-mono text-[10px] uppercase tracking-[0.24em] text-muted-foreground">
@@ -196,11 +196,11 @@ export function SiteHeader() {
         </div>
 
 
-        <div className="ml-auto flex items-center gap-2 sm:gap-3">
+        <div className="ml-auto flex shrink-0 items-center gap-1.5 sm:gap-3">
           <div
             role="group"
             aria-label="Browsing mode"
-            className="flex rounded-full border border-line bg-glass p-0.5 font-mono text-[11px]"
+            className="flex rounded-full border border-line bg-glass p-0.5 font-mono text-[10px] sm:text-[11px]"
           >
             {(["retail", "wholesale"] as const).map((m) => (
               <button
@@ -208,7 +208,7 @@ export function SiteHeader() {
                 type="button"
                 onClick={() => switchMode(m)}
                 aria-pressed={mode === m}
-                className={`rounded-full px-3 py-1.5 capitalize transition-colors ${
+                className={`rounded-full px-2 py-1.5 capitalize transition-colors sm:px-3 ${
                   mode === m
                     ? "bg-foreground text-background"
                     : "text-muted-foreground hover:text-foreground"
@@ -231,7 +231,7 @@ export function SiteHeader() {
           <Link
             to="/login"
             aria-label="Account"
-            className="grid size-9 place-items-center rounded-full border border-line bg-glass font-mono text-sm text-muted-foreground"
+            className="hidden size-9 shrink-0 place-items-center rounded-full border border-line bg-glass font-mono text-sm text-muted-foreground sm:grid"
           >
             A
           </Link>
@@ -241,7 +241,7 @@ export function SiteHeader() {
             aria-label="Menu"
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="grid size-9 place-items-center rounded-full border border-line bg-glass font-mono text-sm lg:hidden"
+            className="grid size-9 shrink-0 place-items-center rounded-full border border-line bg-glass font-mono text-sm lg:hidden"
           >
             {open ? "✕" : "☰"}
           </button>
@@ -298,6 +298,14 @@ export function SiteHeader() {
           )}
 
           <ul className="grid grid-cols-2 gap-2 text-sm">
+            <li className="sm:hidden">
+              <Link
+                to="/login"
+                className="block rounded-lg border border-line bg-glass px-3 py-2"
+              >
+                Account
+              </Link>
+            </li>
             {links.map((l) => (
               <li key={`${l.to}-${l.label}`}>
                 <Link
