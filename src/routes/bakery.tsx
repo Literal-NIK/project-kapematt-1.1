@@ -145,8 +145,7 @@ function BakeryPage() {
           </p>
           {sent ? (
             <p className="mt-6 rounded-xl border border-line bg-glass p-4 text-sm">
-              Thanks — your inquiry is noted. We'll ring you within one working
-              day.
+              Thanks — your inquiry is noted. We'll ring you as soon as possible.
             </p>
           ) : (
             <form className="mt-6 grid gap-4 sm:grid-cols-2" onSubmit={onSubmit}>

@@ -686,18 +686,18 @@ export const STOCK_LABEL: Record<Stock, string> = {
 export const STORE = {
   name: "Kapematt Limited",
   address: "Kapematt Limited, 735W+8H3, Kacheliba Road, Makutano",
-  phone: "+254 700 118 014",
-  email: "hello@kapematt.co.ke",
+  phone: "+254 700 000 000",
+  email: "support@kapematt.co.ke",
   mapQuery: "Kapematt+Limited,+735W%2B8H3,+Kacheliba+Road,+Makutano",
   hours: [
-    { day: "Mon–Fri", time: "6:00–22:00" },
-    { day: "Saturday", time: "6:00–23:00" },
-    { day: "Sunday", time: "7:00–21:00" },
+    { day: "Mon–Fri", time: "7:40–20:00" },
+    { day: "Saturday", time: "7:40:00–20:00" },
+    { day: "Sunday", time: "12:00–20:00" },
   ],
   counters: [
-    { name: "Deli counter", time: "8:00–20:00 daily" },
-    { name: "Bakery counter", time: "5:30–20:00 daily" },
-    { name: "Butchery", time: "7:00–20:00 daily" },
+    { name: "Deli counter", time: "7:40–20:00 daily" },
+    { name: "Bakery counter", time: "7:40–20:00 daily" },
+    { name: "Butchery", time: "7:40–20:00 daily" },
   ],
 };
 
