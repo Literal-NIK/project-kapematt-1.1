@@ -3,9 +3,9 @@ import { Facebook, Instagram, Twitter } from "lucide-react";
 import { DEPARTMENTS, STORE } from "@/data/catalog";
 
 const SOCIALS = [
-  { label: "Facebook", href: "https://facebook.com", Icon: Facebook },
-  { label: "Instagram", href: "https://instagram.com", Icon: Instagram },
-  { label: "X", href: "https://x.com", Icon: Twitter },
+  { label: "Facebook", href: "https://facebook.com/kapematt", Icon: Facebook },
+  { label: "Instagram", href: "https://instagram.com/kapematt", Icon: Instagram },
+  { label: "X", href: "https://x.com/kapematt", Icon: Twitter },
 ] as const;
 
 export function SiteFooter() {
