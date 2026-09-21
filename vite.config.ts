@@ -36,8 +36,15 @@ try {
 
 export default defineConfig({
   tanstackStart: {
-    // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-    // nitro/vite builds from this
+    // Redirect TanStack Start's bundled server entry to src/server.ts
     server: { entry: "server" },
+  },
+
+  // Fix the "Blocked request. This host is not allowed" error on Render
+  server: {
+    allowedHosts: [
+      "project-kapematt-1-1.onrender.com",
+      ".onrender.com", // allows any *.onrender.com subdomain
+    ],
   },
 });
